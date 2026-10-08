@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="tip">以下是当前账号已登录的设备，可将非本机设备退出登录</view>
+
+  <view class="empty" wx:if="{{!loading && list.length == 0}}">暂无登录设备</view>
+
+  <view class="card" wx:for="{{list}}" wx:key="token">
+    <view class="card-top">
+      <text class="name">{{item.deviceName && item.deviceName != '未知' ? item.deviceName : '未知设备'}}</text>
+      <text class="tag" wx:if="{{item.isCurrent}}">当前设备</text>
+    </view>
+    <view class="row"><text class="label">IP 地址</text><text class="value">{{item.loginIp || '未知'}}</text></view>
+    <view class="row"><text class="label">IP 归属地</text><text class="value">{{item.ipAddress}}</text></view>
+    <view class="row"><text class="label">登录时间</text><text class="value">{{item.loginTime}}</text></view>
+    <view class="row"><text class="label">到期时间</text><text class="value">{{item.dateExpire}}</text></view>
+    <view class="kick" wx:if="{{!item.isCurrent}}" bindtap="kick" data-index="{{index}}">退出登录</view>
+  </view>
+</view>

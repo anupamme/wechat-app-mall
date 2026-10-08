@@ -628,12 +628,12 @@ module.exports = {
   goodsVideoEpisodesList: function goodsVideoEpisodesList(goodsId) {
     var token = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
-    return request('/goodsVideoEpisodes/list', true, 'get', {
+    return request(COMMON_BASE_URL + subDomain + '/goodsVideoEpisodes/list', false, 'get', {
       goodsId: goodsId, token: token
     });
   },
   goodsVideoEpisodesBuy: function goodsVideoEpisodesBuy(goodsId, number, token) {
-    return request('/goodsVideoEpisodes/buy', true, 'post', {
+    return request(COMMON_BASE_URL + subDomain + '/goodsVideoEpisodes/buy', false, 'post', {
       goodsId: goodsId, number: number, token: token
     });
   },
@@ -641,7 +641,7 @@ module.exports = {
     return request('/shop/goods/statistics/days', true, 'post', data);
   },
   goodsUseless: function goodsUseless(data) {
-    return request('/shop/goods/useful', true, 'post', data);
+    return request(COMMON_BASE_URL + subDomain + '/shop/goods/useful', false, 'post', data);
   },
   pushNewGoods: function pushNewGoods(data) {
     return request('/shop/goods/putOrUpdate', true, 'post', data);
@@ -2136,15 +2136,15 @@ module.exports = {
     return request('/fee/peisong/list', true, 'get');
   },
   peisongMembers: function peisongMembers(data) {
-    return request('/peisong/member/list', true, 'post', data);
+    return request(COMMON_BASE_URL + subDomain + '/peisong/member/list', false, 'post', data);
   },
   peisongMemberInfo: function peisongMemberInfo(token) {
-    return request('/peisong/member/info', true, 'get', {
+    return request(COMMON_BASE_URL + subDomain + '/peisong/member/info', false, 'get', {
       token: token
     });
   },
   peisongMemberChangeWorkStatus: function peisongMemberChangeWorkStatus(token) {
-    return request('/peisong/member/change-work-status', true, 'post', {
+    return request(COMMON_BASE_URL + subDomain + '/peisong/member/change-work-status', false, 'post', {
       token: token
     });
   },
@@ -2468,7 +2468,7 @@ module.exports = {
     return request(COMMON_BASE_URL + subDomain + ('/mock/' + groupName + '/' + apiName), false, method);
   },
   tourJourneyList: function tourJourneyList(type, refId) {
-    return request('/tourJourney/list', true, 'get', { type: type, refId: refId });
+    return request(COMMON_BASE_URL + subDomain + '/tourJourney/list', false, 'get', { type: type, refId: refId });
   },
   userBankSelectBanks: function userBankSelectBanks() {
     return request(COMMON_BASE_URL + subDomain + '/userBank/banks', false, 'get');
@@ -2882,10 +2882,10 @@ module.exports = {
     return request(COMMON_BASE_URL + subDomain + '/userInvoice/bind', false, 'post', data);
   },
   goodsLendsList: function goodsLendsList(data) {
-    return request('/goodsLends/list', true, 'post', data);
+    return request(COMMON_BASE_URL + subDomain + '/goodsLends/list', false, 'post', data);
   },
   goodsLendsLogs: function goodsLendsLogs(data) {
-    return request('/goodsLends/logs', true, 'post', data);
+    return request(COMMON_BASE_URL + subDomain + '/goodsLends/logs', false, 'post', data);
   },
   // 支付宝小程序
   aliappUserRegister: function aliappUserRegister(data) {
@@ -2925,19 +2925,19 @@ module.exports = {
     return request(COMMON_BASE_URL + merchantId + '/tempData/get', false, 'get', { key: key });
   },
   commonDatetime: function commonDatetime() {
-    return request('/common/datetime', true, 'get');
+    return request(COMMON_BASE_URL + subDomain + '/common/datetime', false, 'get');
   },
   commonDays: function commonDays() {
     var startDay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
     var days = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
-    return request('/common/days', false, 'get', { startDay: startDay, days: days });
+    return request(COMMON_BASE_URL + subDomain + '/common/days', false, 'get', { startDay: startDay, days: days });
   },
   commonDiffMillis: function commonDiffMillis() {
     var d1 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
     var d2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
-    return request('/common/diffMillis', false, 'get', { d1: d1, d2: d2 });
+    return request(COMMON_BASE_URL + subDomain + '/common/diffMillis', false, 'get', { d1: d1, d2: d2 });
   },
   // 企业应用 组织/成员/网盘
   organizePrices: function organizePrices() {
@@ -3684,6 +3684,12 @@ module.exports = {
   },
   photoPay: function photoPay(data) {
     return request(COMMON_BASE_URL + subDomain + '/photo/pay', false, 'post', data);
+  },
+  tournamentScoreList: function tournamentScoreList(data) {
+    return request(COMMON_BASE_URL + subDomain + '/tournamentScore/list', false, 'post', data);
+  },
+  tournamentScoreLogList: function tournamentScoreLogList(data) {
+    return request(COMMON_BASE_URL + subDomain + '/tournamentScore/logs', false, 'post', data);
   }
 };
 

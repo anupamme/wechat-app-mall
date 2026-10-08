@@ -106,21 +106,28 @@
     </view>
   </view>
 
-  <!-- 关于版本 -->
-  <view class="section-card version-card">
-    <view class="version-content">
-      <view class="version-icon">✨</view>
-      <view class="version-info">
-        <text class="version-label">当前版本</text>
-        <text class="version-number">{{version}}</text>
-      </view>
-      <view class="version-tag">最新版</view>
-    </view>
-  </view>
-
-  <!-- 账号注销 -->
+  <!-- 账号安全 -->
   <view class="section-card danger-card">
+    <view class="section-header">
+      <view class="section-icon">
+        <text class="icon-text">🛡️</text>
+      </view>
+      <text class="section-title">账号安全</text>
+    </view>
     <view class="card-content">
+      <navigator class="setting-item" url="/pages/my/devices" hover-class="item-hover">
+        <view class="item-left">
+          <view class="item-icon icon-about">
+            <text class="iconfont">📱</text>
+          </view>
+          <view class="item-info">
+            <text class="item-title">登录设备</text>
+            <text class="item-desc">查看并管理已登录的设备</text>
+          </view>
+        </view>
+        <text class="item-arrow">›</text>
+      </navigator>
+
       <navigator class="setting-item" url="/pages/my/deactivate/step1" hover-class="item-hover">
         <view class="item-left">
           <view class="item-icon icon-danger">
@@ -133,6 +140,18 @@
         </view>
         <text class="item-arrow">›</text>
       </navigator>
+    </view>
+  </view>
+
+  <!-- 关于版本 -->
+  <view class="section-card version-card">
+    <view class="version-content">
+      <view class="version-icon">✨</view>
+      <view class="version-info">
+        <text class="version-label">当前版本</text>
+        <text class="version-number">{{version}}</text>
+      </view>
+      <view class="version-tag">最新版</view>
     </view>
   </view>
 </view>

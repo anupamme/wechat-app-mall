@@ -56,6 +56,7 @@
     "pages/search/index",
     "pages/my/info",
     "pages/my/setting",
+    "pages/my/devices",
     "pages/my/deactivate/step1",
     "pages/my/deactivate/step2",
     "pages/my/deactivate/step3",
